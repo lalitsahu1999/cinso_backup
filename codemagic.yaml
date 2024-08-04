@@ -2,7 +2,7 @@ workflows:
   ios-workflow:
     name: iOS Workflow
     environment:
-      flutter: latest
+      flutter: "3.22.3"
       xcode: latest
     scripts:
       - name: Clean project
