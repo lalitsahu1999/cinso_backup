@@ -3,7 +3,7 @@ workflows:
     name: iOS Workflow
     environment:
       flutter: stable  # or specify a specific Flutter version
-      xcode: latest
+      xcode: 14
     scripts:
       - name: Clean project
         script: flutter clean
@@ -20,4 +20,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - your-lalitesp01@gmail.com
+          - your-email@example.com
