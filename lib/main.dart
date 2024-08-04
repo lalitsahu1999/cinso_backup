@@ -29,7 +29,7 @@ void main() async {
       await Firebase.initializeApp();
 
     }
-    runApp(MyApp());
+   runApp(MyApp());
   } catch (e) {
     Fluttertoast.showToast(
       msg: "Firebase initialization failed: $e",
@@ -39,7 +39,22 @@ void main() async {
       textColor: Colors.white,
       fontSize: 16.0,
     );
-    runApp(ErrorScreen(msg: e.toString(),));
+     runApp( MaterialApp(
+       title: 'Flutter Demo',
+       debugShowCheckedModeBanner: false,
+       theme: ThemeData(
+
+         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+         useMaterial3: true,
+       ),
+       initialRoute: '/',
+       routes: {
+         // When navigating to the "/" route, build the FirstScreen widget.
+         '/': (context) =>  ErrorScreen(msg: e.toString()),
+         // When navigating to the "/second" route, build the SecondScreen widget.
+         '/messages': (context) => Testopen(),
+       },
+     ));
 
   }
 
