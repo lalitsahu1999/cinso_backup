@@ -2,29 +2,45 @@ import 'package:cinso_backup/ui/testOpen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  if(kIsWeb){
-    await Firebase.initializeApp(
-      options: const FirebaseOptions(apiKey: "AIzaSyAt5fgNrH2dl3flt8W2vnvb_sEPNMRqGZs",
-          authDomain: "cinso-global.firebaseapp.com",
-          databaseURL: "https://cinso-global-default-rtdb.asia-southeast1.firebasedatabase.app",
-          projectId: "cinso-global",
-          storageBucket: "cinso-global.appspot.com",
-          messagingSenderId: "1024351045261",
-          appId: "1:1024351045261:web:9f536a39ecda56123f84c4",
-          measurementId: "G-WGDNCBX0D9"
-      ),
+  try {
+
+    if(kIsWeb){
+      await Firebase.initializeApp(
+        options: const FirebaseOptions(apiKey: "AIzaSyAt5fgNrH2dl3flt8W2vnvb_sEPNMRqGZs",
+            authDomain: "cinso-global.firebaseapp.com",
+            databaseURL: "https://cinso-global-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "cinso-global",
+            storageBucket: "cinso-global.appspot.com",
+            messagingSenderId: "1024351045261",
+            appId: "1:1024351045261:web:9f536a39ecda56123f84c4",
+            measurementId: "G-WGDNCBX0D9"
+        ),
+      );
+
+    }else{
+      await Firebase.initializeApp();
+
+    }
+    runApp(MyApp());
+  } catch (e) {
+    Fluttertoast.showToast(
+      msg: "Firebase initialization failed: $e",
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      fontSize: 16.0,
     );
-
-  }else{
-    await Firebase.initializeApp();
-
   }
-  runApp(const MyApp());
+
+
 }
 
 class MyApp extends StatelessWidget {
