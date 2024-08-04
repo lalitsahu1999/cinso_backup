@@ -2,8 +2,8 @@ workflows:
   ios-workflow:
     name: iOS Workflow
     environment:
-      flutter: "3.22.3"  # Replace with your Flutter version
-      xcode: "15"      # Replace with your Xcode version
+      flutter: stable  # or specify the version
+      xcode: latest
     scripts:
       - name: Clean project
         script: flutter clean
@@ -12,6 +12,7 @@ workflows:
       - name: Install CocoaPods dependencies
         script: |
           cd ios
+          rm -rf Pods Podfile.lock
           pod repo update
           pod install --repo-update
       - name: Build iOS app

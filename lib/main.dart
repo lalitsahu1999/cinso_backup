@@ -31,14 +31,7 @@ void main() async {
     }
    runApp(MyApp());
   } catch (e) {
-    Fluttertoast.showToast(
-      msg: "Firebase initialization failed: $e",
-      toastLength: Toast.LENGTH_LONG,
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.red,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+
      runApp( MaterialApp(
        title: 'Flutter Demo',
        debugShowCheckedModeBanner: false,
