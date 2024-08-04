@@ -1,0 +1,24 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    environment:
+      flutter: latest
+      xcode: latest
+    scripts:
+      - name: Clean project
+        script: flutter clean
+
+      - name: Get Flutter packages
+        script: flutter pub get
+
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios
+          pod install
+
+    artifacts:
+      - build/ios/ipa
+    publishing:
+      email:
+        recipients:
+          - cinsoindia@gmail.com
