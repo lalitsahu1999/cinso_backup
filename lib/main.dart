@@ -1,7 +1,4 @@
 import 'package:cinso_backup/ui/testOpen.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_analytics/observer.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,10 +19,10 @@ void main() async {
           measurementId: "G-WGDNCBX0D9"
       ),
     );
-    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+
   }else{
     await Firebase.initializeApp();
-    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+    
   }
   runApp(const MyApp());
 }
@@ -45,7 +42,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       initialRoute: '/',
-      navigatorObservers: [FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance)],
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) =>  Testopen(),
