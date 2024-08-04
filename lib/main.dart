@@ -1,3 +1,4 @@
+import 'package:cinso_backup/ui/Error.dart';
 import 'package:cinso_backup/ui/testOpen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,8 @@ void main() async {
       textColor: Colors.white,
       fontSize: 16.0,
     );
+    runApp(ErrorScreen(msg: e.toString(),));
+
   }
 
 
