@@ -3,7 +3,7 @@ workflows:
     name: iOS Workflow
     environment:
       flutter: "3.22.3"  # Replace with your Flutter version
-      xcode: "14.2"      # Replace with your Xcode version
+      xcode: "15"      # Replace with your Xcode version
     scripts:
       - name: Clean project
         script: flutter clean
