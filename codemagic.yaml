@@ -3,7 +3,7 @@ workflows:
     name: iOS Workflow
     environment:
       flutter: stable  # or specify a specific Flutter version
-      xcode: 14
+      xcode: latest
     scripts:
       - name: Clean project
         script: flutter clean
