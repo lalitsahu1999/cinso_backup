@@ -21,8 +21,18 @@ void main() async {
     );
 
   }else{
-    await Firebase.initializeApp();
-    
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(apiKey: "AIzaSyAt5fgNrH2dl3flt8W2vnvb_sEPNMRqGZs",
+          authDomain: "cinso-global.firebaseapp.com",
+          databaseURL: "https://cinso-global-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "cinso-global",
+          storageBucket: "cinso-global.appspot.com",
+          messagingSenderId: "1024351045261",
+          appId: "1:1024351045261:web:9f536a39ecda56123f84c4",
+          measurementId: "G-WGDNCBX0D9"
+      ),
+    );
+
   }
   runApp(const MyApp());
 }
