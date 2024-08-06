@@ -10,11 +10,7 @@ project 'Runner', {
 }
 
 def flutter_install_ios_plugin_pods(ios_application_path = nil)
-  ios_application_path ||= File.join(__dir__, 'Runner')
-  flutter_root = File.expand_path(File.join(ios_application_path, '..', '..', 'Flutter'))
-  flutter_application_path = File.expand_path(ios_application_path)
-  relative = ->(path) { Pathname.new(path).relative_path_from(Pathname.new(ios_application_path)).to_s }
-  pod 'Flutter', :path => relative.call(File.join(flutter_root, 'bin', 'cache', 'artifacts', 'engine', 'ios'))
+
   pod 'Firebase/Core'
   pod 'Firebase/Database'
 end
