@@ -1,23 +1,17 @@
 workflows:
   ios-workflow:
-    name: iOS Workflow
+    name: iOS build
     environment:
-      flutter: stable  # or specify a specific Flutter version
+      flutter: stable
       xcode: latest
+      cocoapods: default
     scripts:
-      - name: Clean project
-        script: flutter clean
-      - name: Get Flutter packages
-        script: flutter pub get
-      - name: Install CocoaPods dependencies
+      - name: Install dependencies
         script: |
+          flutter pub get
           cd ios
-          pod install --repo-update
+          pod install
       - name: Build iOS app
-        script: flutter build ios --release --no-codesign
+        script: flutter build ios --release
     artifacts:
-      - build/ios/ipa
-    publishing:
-      email:
-        recipients:
-          - your-email@example.com
+      - build/ios/iphoneos/*.ipa
