@@ -3,12 +3,30 @@ platform :ios, '13.0'
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+def flutter_install_ios_plugin_pods(ios_application_path = nil)
+  ios_application_path ||= File.join(__dir__, 'Runner')
+  flutter_root = File.expand_path(File.join(ios_application_path, '..', '..', 'Flutter'))
+  flutter_application_path = File.expand_path(ios_application_path)
+  relative = ->(path) { Pathname.new(path).relative_path_from(Pathname.new(ios_application_path)).to_s }
+  pod 'Flutter', :path => relative.call(File.join(flutter_root, 'bin', 'cache', 'artifacts', 'engine', 'ios'))
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+end
+
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
-
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
-
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+end
