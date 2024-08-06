@@ -6,10 +6,7 @@ target 'Runner' do
   use_modular_headers!
 
   # Pods for Runner
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
   pod 'Firebase/Database'
-  pod 'Firebase/Crashlytics'
 
 end
 
