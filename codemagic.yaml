@@ -2,7 +2,7 @@ workflows:
   ios-workflow:
     name: iOS build
     environment:
-      flutter: '3.5.0'
+      flutter: stable
       xcode: latest
       cocoapods: default
     scripts:
