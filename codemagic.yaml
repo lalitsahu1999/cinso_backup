@@ -9,6 +9,7 @@ workflows:
       - name: Install dependencies
         script: |
           flutter clean 
+          xcodebuild clean
           flutter pub get
           cd ios
           pod install
