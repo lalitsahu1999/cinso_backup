@@ -2,12 +2,13 @@ workflows:
   ios-workflow:
     name: iOS build
     environment:
-      flutter: stable
+      flutter: latest
       xcode: latest
       cocoapods: default
     scripts:
       - name: Install dependencies
         script: |
+          flutter clean 
           flutter pub get
           cd ios
           pod install
