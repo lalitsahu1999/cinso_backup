@@ -11,7 +11,8 @@ project 'Runner', {
 
 def flutter_install_ios_plugin_pods(ios_application_path = nil)
 
-  pod 'Firebase/Core' :modular_headers => true
+
+  pod 'Firebase/Core', :modular_headers => true
   pod 'Firebase/Database'
 end
 
