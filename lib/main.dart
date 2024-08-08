@@ -1,8 +1,10 @@
+import 'package:cinso_backup/firebase_options.dart';
 import 'package:cinso_backup/ui/Error.dart';
 import 'package:cinso_backup/ui/testOpen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 
@@ -26,11 +28,22 @@ void main() async {
       );
 
     }else{
-      await Firebase.initializeApp();
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform
+      );
 
     }
    runApp(MyApp());
   } catch (e) {
+
+    Fluttertoast.showToast(
+        msg: "$e",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        textColor: Colors.white,
+        backgroundColor: Colors.red,
+        fontSize: 16.0
+    );
 
      runApp( MaterialApp(
        title: 'Flutter Demo',
