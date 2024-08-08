@@ -21,9 +21,7 @@ class _ErrorScreenState extends State<ErrorScreen> {
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(15),
-          child: Expanded(
-            child: Text(widget.msg),
-          ),
+          child: Text(widget.msg , style: TextStyle(color: Colors.black),),
         ),
       ),
     );
