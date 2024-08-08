@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1024351045261",
+    "firebase_url": "https://cinso-global-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cinso-global",
+    "storage_bucket": "cinso-global.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024351045261:android:71eb3731c604d8ed3f84c4",
+        "android_client_info": {
+          "package_name": "com.ihsuraa.cinso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024351045261-pii5mc3d9g16net7s4lrrkpi4bgi9fai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ihsuraa.cinso",
+            "certificate_hash": "5939c3afd67bb84a604c5cc655666b959c8fd446"
+          }
+        },
+        {
+          "client_id": "1024351045261-b7f9blje5s69t6hp82du451mhmgf3694.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCfy1L8pDM_twxryF6nj7NZOJNZZEnSlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024351045261-b7f9blje5s69t6hp82du451mhmgf3694.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1024351045261-139s0t0mfkscuaat9gkmqv0hr4tgm183.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ihsuraa.cinso.cinsoBackup"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
